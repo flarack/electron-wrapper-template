@@ -42,18 +42,21 @@ module.exports = {
     {
         name: "@electron-forge/maker-squirrel",
         config: {
-            name: "test_electron_forge",
+            name: "cotm",
             certificateFile: process.env['WINDOWS_PFX_FILE'],
             certificatePassword: process.env['WINDOWS_PFX_PASSWORD']
         }
     },
     {
         name: "@electron-forge/maker-zip",
-        platforms: ["darwin"]
+        platforms: ["dmg"]
     },
     {
-        name: "@electron-forge/maker-deb",
-        config: {}
+        name: "@electron-forge/maker-dmg",
+        config: {
+            background: './assets/dmg-background.png',
+            format: 'ULFO'
+        }
     },
     {
         name: "@electron-forge/maker-rpm",
